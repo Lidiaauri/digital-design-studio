@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Digital Design Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">LILY'S</div>
+      <ul class="nav-links">
+        <li><a href="#progetti">Progetti</a></li>
+        <li><a href="#" id="open-contact">Contatti</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <span class="badge">Open for work</span>
+      <h1>
+        Creo esperienze che
+        <span class="testo-sfumato">lasciano il segno</span>.
+      </h1>
+      <p>
+        Sviluppatore Front-End specializzato in interfacce moderne e WordPress
+        Custom.
+      </p>
+      <button class="btn-principale" onclick="location.href = '#progetti'">
+        Entra nel Portfolio
+      </button>
+    </header>
+
+    <section id="progetti" class="feed-container">
+      <div class="instagram-grid">
+        <a
+          href="fancy-attention.localsite.io"
+          class="progetto-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="progetto-card">
+            <div class="card-immagine img-1">
+              <img
+                src="assets/progetto-dds/lilys-studio.webp"
+                alt="E-commerce Custom"
+              />
+            </div>
+            <div class="card-overlay">
+              <h3>E-commerce Custom</h3>
+              <p>WordPress</p>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="INSERISCI_QUI_IL_LINK"
+          class="progetto-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="progetto-card">
+            <div class="card-immagine img-2">
+              <img src="assets/tua-landing-page.jpg" alt="Landing Page Pop" />
+            </div>
+            <div class="card-overlay">
+              <h3>Landing Page Pop</h3>
+              <p>HTML & CSS Avanzato</p>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="INSERISCI_QUI_IL_LINK"
+          class="progetto-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="progetto-card">
+            <div class="card-immagine img-3">
+              <img src="assets/tua-dashboard.jpg" alt="Dashboard Futura" />
+            </div>
+            <div class="card-overlay">
+              <h3>Dashboard Futura</h3>
+              <p>React & JavaScript</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div id="contatti-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-modal" id="close-contact">&times;</button>
+
+        <div class="contatti-grid">
+          <div class="contatti-info">
+            <span class="badge">Let's talk</span>
+            <h2>
+              Hai un progetto <br /><span class="testo-sfumato">in mente?</span>
+            </h2>
+            <p class="contatti-descrizione">
+              Disponibile per progetti freelance, consulenze front-end o
+              collaborazioni con agenzie. Rispondo solitamente entro 24 ore.
+            </p>
+
+            <div class="social-box-list">
+              <a href="mailto:lidiaauriemma@outlook.it" class="social-box">
+                <span>Email</span>
+                <span class="freccia">→</span>
+              </a>
+              <a
+                href="https://wwww.linkedin.com/in/lidia-auriemma-4850ba213"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-box"
+              >
+                <span>LinkedIn</span>
+                <span class="freccia">→</span>
+              </a>
+              <a
+                href="https://github.com/lidiaauri"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-box"
+              >
+                <span>GitHub</span>
+                <span class="freccia">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contatti-form-wrapper">
+            <form class="contatti-form" action="#" method="POST">
+              <div class="form-group">
+                <label for="nome">Nome / Azienda</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Inserisci il tuo nome"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="la-tua@email.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="messaggio">Messaggio</label>
+                <textarea
+                  id="messaggio"
+                  name="messaggio"
+                  rows="5"
+                  placeholder="Dimmi di più sul tuo progetto"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-principale btn-form">
+                Invia Messaggio
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById("contatti-modal");
+      const openBtn = document.getElementById("open-contact");
+      const closeBtn = document.getElementById("close-contact");
+
+      // Mostra il pop-up
+      openBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Blocca lo scroll della pagina sotto
+      });
+
+      // Chiude il pop-up cliccando sulla X
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto"; // Riattiva lo scroll
+      });
+
+      // Chiude il pop-up se si clicca sullo sfondo nero fuori dalla scheda
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+          document.body.style.overflow = "auto";
+        }
+      });
+    </script>
+  </body>
+</html>

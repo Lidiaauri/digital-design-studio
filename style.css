@@ -1,0 +1,339 @@
+/* --- Reset & Layout --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 20px;
+}
+
+/* --- Navbar --- */
+.navbar {
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ff00ff;
+}
+
+/* --- Hero --- */
+.hero {
+  padding: 100px 0;
+  text-align: left;
+  max-width: 900px;
+}
+
+.badge {
+  border: 1px solid #ff00ff;
+  color: #ff00ff;
+  padding: 5px 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.testo-sfumato {
+  color: #00ffff;
+  text-shadow: 4px 4px 0px #ff00ff;
+}
+
+.btn-principale {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 30px;
+  transition: 0.2s;
+}
+
+.btn-principale:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* --- Grid Progetti (Brutal) --- */
+.feed-container {
+  margin-top: 100px;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.progetto-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.progetto-card {
+  height: 450px;
+  border: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-immagine {
+  height: 100%;
+  transition: 0.3s;
+}
+
+.card-immagine img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.progetto-card:hover .card-immagine {
+  filter: grayscale(100%);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.progetto-card:hover .card-overlay {
+  opacity: 1;
+}
+
+img,
+.progetto-card {
+  max-width: 100%;
+}
+
+/* --- Finestra Pop-up Contatti (Brutal Style) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.95
+  ); /* Copre l'intero sito con sfondo nero */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Classe attivata via JS per mostrare il pop-up */
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: #000;
+  border: 3px solid #fff;
+  padding: 60px 40px;
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto; /* Permette lo scorrimento dentro il pop-up su schermi piccoli */
+  box-shadow: 10px 10px 0px #ff00ff; /* Ombra netta magenta */
+}
+
+/* Pulsante di chiusura (X) */
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.close-modal:hover {
+  background-color: #00ffff;
+  color: #000;
+}
+
+.contatti-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contatti-info h2 {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.contatti-descrizione {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* Box Social Interattivi */
+.social-box-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #fff;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+}
+
+.social-box:hover {
+  background-color: #ff00ff;
+  color: #000;
+  box-shadow: 4px 4px 0px #00ffff;
+  transform: translate(-2px, -2px);
+}
+
+/* Form di Contatto */
+.contatti-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: 2px solid #fff;
+  padding: 12px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00ffff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #555;
+}
+
+.btn-form {
+  width: 100%;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 900px) {
+  .contatti-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .modal-content {
+    padding: 50px 20px 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+}

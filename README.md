@@ -49,7 +49,8 @@ Questo repository non è definitivo: nuove sezioni e nuovi progetti verranno agg
 ## Contatti
 
 Email: lidiaauriemma@outlook.it
-LinkedIn: Lidiaauri
+LinkedIn: lidiaauriemma
+e-Commerce in corso di sviluppo: https://lidiaauriemma.infy.click/
 
 ---
 

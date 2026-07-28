@@ -46,12 +46,14 @@ Questo repository non è definitivo: nuove sezioni e nuovi progetti verranno agg
 
 ---
 
-## Contatti
 
-Email: lidiaauriemma@outlook.it
-LinkedIn: lidiaauriemma
-e-Commerce in corso di sviluppo: https://lidiaauriemma.infy.click/
+## Contatti & Networking
 
+Per progetti o proposte lavorative, puoi trovarmi qui:
+
+* **Email:** [lidiaauriemma@outlook.it](mailto:lidiaauriemma@outlook.it)
+* **LinkedIn:** [Lidia Auriemma](https://www.linkedin.com/in/lidiaauriemma)
+* **e-Commerce:** [Lily's](https://lidiaauriemma.infy.click) - in fase di sviluppo
 ---
 
 ## Nota

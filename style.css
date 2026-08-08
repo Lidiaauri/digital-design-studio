@@ -37,11 +37,27 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #fff;
-  transition: 0.2s;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ff00ff;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #ff00ff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* --- Hero --- */
@@ -83,12 +99,18 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 30px;
-  transition: 0.2s;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn-principale:hover {
   background: #fff;
   color: #000;
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0px #ff00ff;
 }
 
 /* --- Grid Progetti (Brutal) --- */
@@ -113,20 +135,32 @@ body {
   border: 2px solid #fff;
   position: relative;
   overflow: hidden;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.progetto-card:hover {
+  border-color: #00ffff;
+  box-shadow: 6px 6px 0px #ff00ff;
+  transform: translateY(-5px);
 }
 
 .card-immagine {
   height: 100%;
-  transition: 0.3s;
+  transition: transform 0.4s ease;
 }
 
 .card-immagine img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.progetto-card:hover .card-immagine {
+.progetto-card:hover .card-immagine img {
+  transform: scale(1.08);
 }
 
 .card-overlay {
@@ -192,6 +226,16 @@ img,
   max-height: 90vh;
   overflow-y: auto; /* Permette lo scorrimento dentro il pop-up su schermi piccoli */
   box-shadow: 10px 10px 0px #ff00ff; /* Ombra netta magenta */
+  transform: scale(0.8) translateY(30px);
+  opacity: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 /* Pulsante di chiusura (X) */
@@ -255,7 +299,16 @@ img,
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
-  transition: 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-box .freccia {
+  display: inline-block;
+  transition: transform 0.2s ease;
 }
 
 .social-box:hover {
@@ -263,6 +316,10 @@ img,
   color: #000;
   box-shadow: 4px 4px 0px #00ffff;
   transform: translate(-2px, -2px);
+}
+
+.social-box:hover .freccia {
+  transform: translateX(8px);
 }
 
 /* Form di Contatto */
@@ -309,30 +366,4 @@ img,
 
 .btn-form {
   width: 100%;
-}
-
-/* --- Responsive Media Queries --- */
-@media (max-width: 900px) {
-  .contatti-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .modal-content {
-    padding: 50px 20px 30px 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .instagram-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .navbar {
-    padding: 20px;
-  }
 }

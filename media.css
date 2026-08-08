@@ -1,0 +1,118 @@
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 900px) {
+  .contatti-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .modal-content {
+    padding: 50px 20px 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 70px 0 40px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .btn-principale {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .instagram-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progetto-card {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .modal-content {
+    padding: 45px 15px 25px;
+  }
+
+  .contatti-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .social-box {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .navbar {
+    margin-bottom: 30px;
+  }
+
+  .hero {
+    padding: 50px 0 30px;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .feed-container {
+    margin-top: 50px;
+  }
+
+  .progetto-card {
+    height: 280px;
+  }
+
+  .close-modal {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 1.6rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}

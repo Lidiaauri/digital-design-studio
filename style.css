@@ -127,7 +127,6 @@ body {
 }
 
 .progetto-card:hover .card-immagine {
-  filter: grayscale(100%);
 }
 
 .card-overlay {
@@ -140,7 +139,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
   transition: 0.3s;
 }
